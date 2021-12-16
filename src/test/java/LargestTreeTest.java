@@ -64,4 +64,28 @@ public class LargestTreeTest {
         tree.addEdge(adj, 4, 6);
         Assert.assertEquals(3, tree.largestTree(adj,V));
     }
+
+    @Test
+    public void test5(){
+        int[][] edges = {};
+        LargestTree tree = new LargestTree();
+        int V = 0;
+        LinkedList<Integer> adj[] = new LinkedList[V];
+        for (int i = 0; i < adj.length; i++)
+            adj[i] = new LinkedList<>();
+        if(edges.length == 0 && V == 0)
+            Assert.assertEquals(0, tree.largestTree(adj,V));
+    }
+
+    @Test
+    public void test6(){
+        int[][] edges = {{0,0}};
+        LargestTree tree = new LargestTree();
+        int V = 1;
+        LinkedList<Integer> adj[] = new LinkedList[V];
+        for (int i = 0; i < adj.length; i++)
+            adj[i] = new LinkedList<>();
+        tree.addEdge(adj, 0, 0);
+        Assert.assertEquals(1, tree.largestTree(adj,V));
+    }
 }
